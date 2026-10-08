@@ -2,7 +2,7 @@
   "name": "dc-astro-cookie-consent",
   "version": "0.1.0",
   "type": "module",
-  "description": "Cookie consent components and Google Consent Mode helpers for Astro.",
+  "description": "Astro components and Google Consent Mode helpers for Orest Bida's CookieConsent.",
   "license": "MIT",
   "repository": {
     "type": "git",
