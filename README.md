@@ -1,6 +1,6 @@
 # dc-astro-cookie-consent
 
-Cookie consent components for Astro, built on [vanilla-cookieconsent](https://cookieconsent.orestbida.com/). The package provides:
+Cookie consent components for Astro, built on Orest Bida's [CookieConsent](https://github.com/orestbida/cookieconsent). The package provides:
 
 - an accessible opt-in banner and preferences dialog;
 - a persistent cookie settings control;
@@ -247,3 +247,9 @@ The receiving developer can change hosting, analytics, or tag management without
 ## License
 
 MIT
+
+## Acknowledgements
+
+This package is an Astro integration for [CookieConsent](https://github.com/orestbida/cookieconsent), created and maintained by [Orest Bida](https://github.com/orestbida) and its contributors. CookieConsent supplies the consent engine, modal interface, preference storage, script management, and core styles used here. It is distributed under its own [MIT licence](https://github.com/orestbida/cookieconsent/blob/master/LICENSE).
+
+See the upstream [documentation](https://cookieconsent.orestbida.com/) for its complete configuration and API reference.
