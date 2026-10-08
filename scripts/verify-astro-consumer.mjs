@@ -10,7 +10,7 @@ if (!major || !/^\d+$/.test(major)) {
 }
 
 const projectRoot = resolve(import.meta.dirname, '..');
-const workDirectory = mkdtempSync(join(tmpdir(), `dc-astro-cookie-consent-astro${major}-`));
+const workDirectory = mkdtempSync(join(tmpdir(), `digital-craft-ltd-astro-cookie-consent-astro${major}-`));
 const run = (command, args, cwd) =>
   execFileSync(command, args, { cwd, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
 
@@ -24,12 +24,12 @@ try {
     join(appDirectory, 'package.json'),
     JSON.stringify(
       {
-        name: `dc-astro-cookie-consent-consumer-${major}`,
+        name: `@digital-craft-ltd/astro-cookie-consent-consumer-${major}`,
         private: true,
         type: 'module',
         dependencies: {
           astro: `^${major}.0.0`,
-          'dc-astro-cookie-consent': `file:${tarball}`,
+          '@digital-craft-ltd/astro-cookie-consent': `file:${tarball}`,
         },
         devDependencies: {
           '@astrojs/check': 'latest',
@@ -50,7 +50,7 @@ import {
   CookieConsent,
   CookiePreferencesLink,
   createDefaultConsentConfig,
-} from 'dc-astro-cookie-consent';
+} from '@digital-craft-ltd/astro-cookie-consent';
 
 const config = createDefaultConsentConfig({
   privacyPolicyUrl: '/privacy/',

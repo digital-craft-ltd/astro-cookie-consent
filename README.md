@@ -1,4 +1,4 @@
-# dc-astro-cookie-consent
+# @digital-craft-ltd/astro-cookie-consent
 
 Cookie consent components for Astro, built on Orest Bida's [CookieConsent](https://github.com/orestbida/cookieconsent). The package provides:
 
@@ -15,7 +15,7 @@ Cookie consent components for Astro, built on Orest Bida's [CookieConsent](https
 ## Install
 
 ```sh
-npm install dc-astro-cookie-consent
+npm install @digital-craft-ltd/astro-cookie-consent
 ```
 
 Astro 5, 6, and 7 are supported.
@@ -30,7 +30,7 @@ import {
   CookieConsent,
   CookiePreferencesLink,
   createDefaultConsentConfig,
-} from 'dc-astro-cookie-consent';
+} from '@digital-craft-ltd/astro-cookie-consent';
 
 const cookieConsentConfig = createDefaultConsentConfig({
   privacyPolicyUrl: '/privacy-policy/',
@@ -69,7 +69,7 @@ import {
   ConsentModeDefaults,
   CookieConsent,
   createDefaultConsentConfig,
-} from 'dc-astro-cookie-consent';
+} from '@digital-craft-ltd/astro-cookie-consent';
 
 const config = createDefaultConsentConfig({
   privacyPolicyUrl: '/privacy-policy/',
@@ -124,7 +124,7 @@ You can override the defaults or category mapping:
 
 ```astro
 ---
-import { CookieConsent, createDefaultConsentConfig } from 'dc-astro-cookie-consent';
+import { CookieConsent, createDefaultConsentConfig } from '@digital-craft-ltd/astro-cookie-consent';
 
 const config = createDefaultConsentConfig({
   privacyPolicyUrl: '/privacy-policy/',
@@ -189,7 +189,7 @@ window.addEventListener('dc:cookie-consent-change', (event) => {
 
 `consentMode` is populated when Google Consent Mode is enabled and is otherwise an empty object.
 
-For a custom preferences control, call `showCookiePreferences()` from `dc-astro-cookie-consent/client`, or add `data-dc-cookie-preferences` to a button or link.
+For a custom preferences control, call `showCookiePreferences()` from `@digital-craft-ltd/astro-cookie-consent/client`, or add `data-dc-cookie-preferences` to a button or link.
 
 ## Styling
 
@@ -241,8 +241,8 @@ The receiving developer can change hosting, analytics, or tag management without
 - `createDefaultConsentConfig`
 - `defaultConsentModeDefaults`
 - `defaultConsentModeCategoryMap`
-- `initializeCookieConsent` and `showCookiePreferences` from `dc-astro-cookie-consent/client`
-- `dc-astro-cookie-consent/styles.css` for manual stylesheet imports
+- `initializeCookieConsent` and `showCookiePreferences` from `@digital-craft-ltd/astro-cookie-consent/client`
+- `@digital-craft-ltd/astro-cookie-consent/styles.css` for manual stylesheet imports
 
 ## License
 
