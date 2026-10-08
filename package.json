@@ -1,0 +1,66 @@
+{
+  "name": "dc-astro-cookie-consent",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Cookie consent components and Google Consent Mode helpers for Astro.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digital-craft-ltd/astro-cookie-consent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/digital-craft-ltd/astro-cookie-consent/issues"
+  },
+  "homepage": "https://github.com/digital-craft-ltd/astro-cookie-consent#readme",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./client": {
+      "types": "./dist/client/index.d.ts",
+      "import": "./dist/client/index.js"
+    },
+    "./components/*": "./dist/components/*",
+    "./styles.css": "./dist/styles/cookie-consent.css"
+  },
+  "scripts": {
+    "build": "tsup --config tsup.config.ts && tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "verify:dist": "node scripts/verify-dist.mjs",
+    "verify:consumer": "node scripts/verify-astro-consumer.mjs",
+    "prepublishOnly": "npm run build && npm run verify:dist"
+  },
+  "keywords": [
+    "astro",
+    "cookie-consent",
+    "consent-mode",
+    "google-tag-manager",
+    "gdpr"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "astro": "^5.0.0 || ^6.0.0 || ^7.0.0"
+  },
+  "dependencies": {
+    "vanilla-cookieconsent": "^3.1.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "astro": "^5.15.1",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3"
+  },
+  "allowScripts": {
+    "esbuild": false,
+    "sharp": false,
+    "fsevents": false
+  }
+}

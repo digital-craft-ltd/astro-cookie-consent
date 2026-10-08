@@ -1,0 +1,10 @@
+#cc-main .cc--anim .cm,
+#cc-main .cc--anim .pm,
+#cc-main .cc--anim .pm-overlay,
+#cc-main .cc--anim.cm-wrapper::before {
+  transition-property: opacity, transform !important;
+}
+
+#cc-main .cc--anim .cm {
+  will-change: opacity, transform;
+}

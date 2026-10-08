@@ -1,0 +1,14 @@
+---
+import { defaultConsentModeDefaults } from '../defaultConfig.js';
+import type { ConsentModeDefaultState } from '../types';
+
+interface Props {
+  defaults?: ConsentModeDefaultState;
+}
+
+const { defaults = defaultConsentModeDefaults } = Astro.props;
+const serializedDefaults = JSON.stringify(defaults).replaceAll('<', '\\u003c');
+const script = `window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){window.dataLayer.push(arguments)};window.gtag('consent','default',${serializedDefaults});`;
+---
+
+<script is:inline set:html={script}></script>

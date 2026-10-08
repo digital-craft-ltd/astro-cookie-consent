@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate (Node 22.22)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22.22'
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run build
+      - run: npm run verify:dist
+      - run: npm pack --dry-run
+      - run: npm audit --omit=dev
+
+  consumer:
+    name: Consumer (Node 22.22 / Astro ${{ matrix.astro }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        astro: [5, 6, 7]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22.22'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm run verify:consumer -- ${{ matrix.astro }}
+
+  npm12:
+    name: npm 12 install defaults
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22.22'
+          cache: npm
+      - run: npm install -g npm@12
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run build
+      - run: npm run verify:dist
