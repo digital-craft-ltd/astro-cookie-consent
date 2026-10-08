@@ -1,5 +1,5 @@
 {
-  "name": "@digital-craft-ltd/astro-cookie-consent",
+  "name": "@digital-craft/astro-cookie-consent",
   "version": "0.1.0",
   "type": "module",
   "description": "Astro components and Google Consent Mode helpers for Orest Bida's CookieConsent.",
