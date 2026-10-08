@@ -38,6 +38,8 @@
   },
   "keywords": [
     "astro",
+    "astro-component",
+    "withastro",
     "cookie-consent",
     "consent-mode",
     "google-tag-manager",
